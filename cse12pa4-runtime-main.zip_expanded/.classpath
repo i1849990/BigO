@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="pa4-starter/pa4-student/src/" kind="src" path="cse12pa4-runtime-main"/>
+	<classpathentry kind="src" path="cse12pa4-runtime-main/pa4-starter/pa4-student/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
