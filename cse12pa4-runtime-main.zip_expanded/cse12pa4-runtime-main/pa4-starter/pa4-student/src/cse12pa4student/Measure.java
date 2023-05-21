@@ -2,7 +2,6 @@ package cse12pa4student;
 
 import java.util.ArrayList;
 import java.util.List;
-import static cse12pa4mysteries.Mysteries.*;
 
 public class Measure {
 
@@ -11,55 +10,60 @@ public class Measure {
 		/** TODO **/
 		List<Measurement> a = new ArrayList<Measurement>();
 		//Example call to mystery method
-		int n = startN;
-		while(n <= stopN) {
-			for (int i = 0; i < toRun.length; i++) {
-				if (i == 0) {
+		
+		for (int n = startN; n < stopN+1; n++) {
+			switch(toRun[0]) {
+				case "A":
 					long startTime = System.nanoTime();
-					Mystery.mysteryA(n);
+					Mystery.mysteryA(50);
 					long endTime = System.nanoTime() - startTime;
 					
 					a.add(new Measurement("A", n, endTime));
-				}else if(i ==1) {
-					long startTime = System.nanoTime();
-					Mystery.mysteryB(n);
-					long endTime = System.nanoTime() - startTime;
+					break;
 					
-					a.add(new Measurement("B", n, endTime));
+				case "B":
+					long startTime1 = System.nanoTime();
+					Mystery.mysteryB(50);
+					long endTime1 = System.nanoTime() - startTime1;
+					a.add(new Measurement("B", n, endTime1));
+					break;
 					
-				}else if(i == 2) {
-					long startTime = System.nanoTime();
-					Mystery.mysteryC(n);
-					long endTime = System.nanoTime() - startTime;
+				case "C":
+					long startTime11 = System.nanoTime();
+					Mystery.mysteryC(50);
+					long endTime11 = System.nanoTime() - startTime11;
+					a.add(new Measurement("C", n, endTime11));
+					break;
 					
-					a.add(new Measurement("C", n, endTime));
+				case "D":
+					long startTime111 = System.nanoTime();
+					Mystery.mysteryD(50);
+					long endTime111 = System.nanoTime() - startTime111;
+					a.add(new Measurement("D", n, endTime111));
+					break;
 					
-				}else if (i == 3) {
-					long startTime = System.nanoTime();
-					Mystery.mysteryD(n);
-					long endTime = System.nanoTime() - startTime;
+				case "E":
+					long startTime1111 = System.nanoTime();
+					Mystery.mysteryE(50);
+					long endTime1111 = System.nanoTime() - startTime1111;
+					a.add(new Measurement("E", n, endTime1111));
+					break;
 					
-					a.add(new Measurement("D", n, endTime));
+				case "F":
+					long startTime11111 = System.nanoTime();
+					Mystery.mysteryF(50);
+					long endTime11111 = System.nanoTime() - startTime11111;
+					a.add(new Measurement("F", n, endTime11111));
+					break;
 					
-				}else if(i == 4) {
-					long startTime = System.nanoTime();
-					Mystery.mysteryE(n);
-					long endTime = System.nanoTime() - startTime;
-					
-					a.add(new Measurement("E", n, endTime));
-				}else if(i == 5) {
-					long startTime = System.nanoTime();
-					Mystery.mysteryF(n);
-					long endTime = System.nanoTime() - startTime;
-					
-					a.add(new Measurement("F", n, endTime));
-				}
+				
 			}
-			long startTime = System.nanoTime();
 			
 		}
 		return null;
 	}
+	
+	
 	
 
 	public static void measurementsToCSV(List<Measurement> toConvert) {
